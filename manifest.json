@@ -5,7 +5,7 @@
   "loaderVersion": "21.1.125",
   "mods": [
     {
-      "name": "Create",
+      "name": "create-1.21.1-6.0.0",
       "fileName": "create-1.21.1-6.0.0.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-1.21.1-6.0.0.jar"
     }
