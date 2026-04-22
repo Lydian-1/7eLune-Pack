@@ -1,0 +1,59 @@
+name: Auto-Manifest & Discord Sync
+
+on:
+  push:
+    paths:
+      - 'mods/**' # Se déclenche si tu upload via le site GitHub
+  workflow_dispatch: # Permet le déclenchement depuis Discord/Make.com
+    inputs:
+      file_url:
+        description: 'URL du fichier Discord'
+        required: false
+      file_name:
+        description: 'Nom du fichier .jar'
+        required: false
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Télécharger le mod depuis Discord (Si déclenché via API)
+        if: ${{ github.event.inputs.file_url != '' }}
+        run: |
+          curl -L "${{ github.event.inputs.file_url }}" -o "mods/${{ github.event.inputs.file_name }}"
+
+      - name: Génération automatique du manifest.json
+        run: |
+          python -c "
+          import os, json
+          mods = []
+          if os.path.exists('mods'):
+              for f in os.listdir('mods'):
+                  if f.endswith('.jar'):
+                      mods.append({
+                          'name': f.replace('.jar', ''),
+                          'fileName': f,
+                          'url': f'https://raw.githubusercontent.com/${{ github.repository }}/main/mods/{f}'
+                      })
+          manifest = {
+              'version': '1.0.0', 
+              'gameVersion': '1.21.1', 
+              'loader': 'neoforge', 
+              'loaderVersion': '21.1.125', 
+              'mods': mods
+          }
+          with open('manifest.json', 'w') as f:
+              json.dump(manifest, f, indent=2)
+          "
+
+      - name: Commit et Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add mods/ manifest.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and manifest" && git push)
