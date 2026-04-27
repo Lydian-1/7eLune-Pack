@@ -15,6 +15,11 @@
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/fancymenu_neoforge_3.8.1_MC_1.21.1.jar"
     },
     {
+      "name": "konkrete_neoforge_1.9.9_MC_1.21",
+      "fileName": "konkrete_neoforge_1.9.9_MC_1.21.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/konkrete_neoforge_1.9.9_MC_1.21.jar"
+    },
+    {
       "name": "CreateDragonsPlus-1.10.0b",
       "fileName": "CreateDragonsPlus-1.10.0b.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/CreateDragonsPlus-1.10.0b.jar"
@@ -38,6 +43,11 @@
       "name": "create-1.21.1-6.0.10",
       "fileName": "create-1.21.1-6.0.10.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-1.21.1-6.0.10.jar"
+    },
+    {
+      "name": "melody_neoforge_1.0.10_MC_1.21",
+      "fileName": "melody_neoforge_1.0.10_MC_1.21.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/melody_neoforge_1.0.10_MC_1.21.jar"
     }
   ],
   "configs": [
