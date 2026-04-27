@@ -1,0 +1,30 @@
+type = layout
+customization-meta {
+  renderorder = foreground
+  identifier = main_menu
+  action = add
+}
+customization {
+  element {
+    type = image
+    id = custom_background
+    x = 0
+    y = 0
+    width = 100%
+    height = 100%
+    z = -10
+    image = fancymenu:assets/background.png
+    stretch = true
+  }
+  element {
+    type = image
+    id = custom_logo
+    x = 0
+    y = 30
+    width = 300
+    height = 80
+    z = 10
+    image = fancymenu:assets/logo.png
+    orientation = top-centered
+  }
+}
