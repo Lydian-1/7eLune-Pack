@@ -49,27 +49,5 @@
       "fileName": "melody_neoforge_1.0.10_MC_1.21.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/melody_neoforge_1.0.10_MC_1.21.jar"
     }
-  ],
-  "configs": [
-    {
-      "name": "Background Menu",
-      "fileName": "fancymenu/assets/background.png",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/assets/background.png"
-    },
-    {
-      "name": "Logo Menu",
-      "fileName": "fancymenu/assets/logoo.png",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/assets/logo.png"
-    },
-    {
-      "name": "Main Menu Layout",
-      "fileName": "fancymenu/customization/title_screen_layout.txt",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customization/title_screen_layout.txt"
-    },
-    {
-      "name": "Enable Customizations",
-      "fileName": "fancymenu/customizablemenus.txt",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customizablemenus.txt"
-    }
   ]
 }
