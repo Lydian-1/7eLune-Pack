@@ -4,31 +4,30 @@ customization-meta {
   renderorder = foreground
   identifier = net.minecraft.client.gui.screens.TitleScreen
   action = add
-  version = 2.0
 }
 
 customization {
-  element {
-    type = image
-    id = custom_background
-    x = 0
-    y = 0
-    width = 100%
-    height = 100%
-    z = -10
-    image = fancymenu:assets/background.png
-    stretch = true
-  }
+  path = image
+  action = add
+  id = custom_background
+  x = 0
+  y = 0
+  width = 100%
+  height = 100%
+  z = -10
+  image = fancymenu:assets/background.png
+  stretch = true
+}
 
-  element {
-    type = image
-    id = custom_logo
-    x = 0
-    y = 30
-    width = 300
-    height = 80
-    z = 10
-    image = fancymenu:assets/logo.png
-    orientation = top-centered
-  }
+customization {
+  path = image
+  action = add
+  id = custom_logo
+  x = 0
+  y = 30
+  width = 300
+  height = 80
+  z = 10
+  image = fancymenu:assets/logo.png
+  orientation = top-centered
 }
