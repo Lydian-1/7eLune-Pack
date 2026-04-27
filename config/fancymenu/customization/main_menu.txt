@@ -1,9 +1,12 @@
-type = layout
+type = fancymenu_layout
+
 customization-meta {
   renderorder = foreground
-  identifier = main_menu
+  identifier = net.minecraft.client.gui.screens.TitleScreen
   action = add
+  version = 2.0
 }
+
 customization {
   element {
     type = image
@@ -13,9 +16,10 @@ customization {
     width = 100%
     height = 100%
     z = -10
-    image = config/fancymenu/assets/background.png
+    image = fancymenu:assets/background.png
     stretch = true
   }
+
   element {
     type = image
     id = custom_logo
@@ -24,7 +28,7 @@ customization {
     width = 300
     height = 80
     z = 10
-    image = config/fancymenu/assets/logo.png
+    image = fancymenu:assets/logo.png
     orientation = top-centered
   }
 }
