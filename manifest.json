@@ -65,6 +65,11 @@
       "name": "Main Menu Layout",
       "fileName": "fancymenu/customization/main_menu.txt",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customization/main_menu.txt"
+    },
+    {
+      "name": "Enable Customizations",
+      "fileName": "fancymenu/customizablemenus.txt",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customizablemenus.txt"
     }
   ]
 }
