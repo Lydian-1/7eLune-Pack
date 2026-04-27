@@ -63,8 +63,8 @@
     },
     {
       "name": "Main Menu Layout",
-      "fileName": "fancymenu/customization/title_screen.txt",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customization/title_screen.txt"
+      "fileName": "fancymenu/customization/title_screen_layout.txt",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/config/fancymenu/customization/title_screen_layout.txt"
     },
     {
       "name": "Enable Customizations",
