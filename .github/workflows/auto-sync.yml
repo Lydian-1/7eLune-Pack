@@ -3,8 +3,9 @@ name: Auto-Manifest & Discord Sync
 on:
   push:
     paths:
-      - 'mods/**' # Se déclenche si tu upload via le site GitHub
-  workflow_dispatch: # Permet le déclenchement depuis Discord/Make.com
+      - 'mods/**'
+      - 'config/**' # Se déclenche aussi si tu modifies les configs
+  workflow_dispatch:
     inputs:
       file_url:
         description: 'URL du fichier Discord'
@@ -33,7 +34,7 @@ jobs:
           python -c "
           import os, json
 
-          # 1. Charger l'existant pour ne rien perdre
+          # 1. Charger l'existant
           manifest = {}
           if os.path.exists('manifest.json'):
               try:
@@ -42,14 +43,12 @@ jobs:
               except:
                   manifest = {}
 
-          # On récupère les mods déjà présents
+          # --- GESTION DES MODS ---
           existing_mods = manifest.get('mods', [])
-          
-          # On filtre pour GARDER les mods qui ne sont pas sur GitHub (ex: ton lien Dropbox)
-          # Si l'URL ne contient pas 'raw.githubusercontent', on le garde précieusement
+          # On garde les liens externes (Dropbox)
           external_mods = [m for m in existing_mods if 'raw.githubusercontent.com' not in m.get('url', '')]
-
-          # 2. Scanner le dossier /mods pour les fichiers GitHub
+          
+          # On scanne les fichiers locaux dans /mods
           github_mods = []
           if os.path.exists('mods'):
               for f in os.listdir('mods'):
@@ -59,20 +58,23 @@ jobs:
                           'fileName': f,
                           'url': f'https://raw.githubusercontent.com/${{ github.repository }}/main/mods/{f}'
                       })
-
-          # 3. Fusionner les deux listes
           all_mods = external_mods + github_mods
 
-          # 4. Mettre à jour le manifest global
+          # --- GESTION DES CONFIGS (Protection) ---
+          # On garde la section configs telle quelle si elle existe
+          configs = manifest.get('configs', [])
+
+          # 4. Mettre à jour le manifest final
           manifest.update({
               'version': manifest.get('version', '1.0.0'),
               'gameVersion': '1.21.1',
               'loader': 'neoforge',
-              'loaderVersion': '21.1.219', # Version corrigée pour tes mods Create
-              'mods': all_mods
+              'loaderVersion': '21.1.219',
+              'mods': all_mods,
+              'configs': configs
           })
 
-          # 5. Sauvegarde propre
+          # 5. Sauvegarde
           with open('manifest.json', 'w', encoding='utf-8') as f:
               json.dump(manifest, f, indent=2, ensure_ascii=False)
           "
@@ -81,5 +83,5 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add mods/ manifest.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and manifest (kept external links)" && git push)
+          git add mods/ config/ manifest.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and protect configs" && git push)
