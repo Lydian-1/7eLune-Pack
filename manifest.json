@@ -5,6 +5,11 @@
   "loaderVersion": "21.1.125",
   "mods": [
     {
+      "name": "CreateDragonsPlus-1.10.0b",
+      "fileName": "CreateDragonsPlus-1.10.0b.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/CreateDragonsPlus-1.10.0b.jar"
+    },
+    {
       "name": "FarmersDelight-1.21.1-1.2.11a",
       "fileName": "FarmersDelight-1.21.1-1.2.11a.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/FarmersDelight-1.21.1-1.2.11a.jar"
