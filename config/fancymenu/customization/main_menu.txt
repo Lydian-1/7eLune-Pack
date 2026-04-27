@@ -2,7 +2,7 @@ type = fancymenu_layout
 
 customization-meta {
   renderorder = foreground
-  identifier = net.minecraft.client.gui.screens.TitleScreen
+  identifier = title_screen
   action = add
 }
 
