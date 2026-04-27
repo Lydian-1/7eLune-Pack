@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "gameVersion": "1.21.1",
   "loader": "neoforge",
-  "loaderVersion": "21.1.125",
+  "loaderVersion": "21.1.119",
   "mods": [
     {
       "name": "CreateDragonsPlus-1.10.0b",
