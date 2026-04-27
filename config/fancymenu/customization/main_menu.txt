@@ -13,7 +13,7 @@ customization {
     width = 100%
     height = 100%
     z = -10
-    image = fancymenu:assets/background.png
+    image = config/fancymenu/assets/background.png
     stretch = true
   }
   element {
@@ -24,7 +24,7 @@ customization {
     width = 300
     height = 80
     z = 10
-    image = fancymenu:assets/logo.png
+    image = config/fancymenu/assets/logo.png
     orientation = top-centered
   }
 }
