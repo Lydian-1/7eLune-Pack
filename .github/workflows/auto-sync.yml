@@ -25,30 +25,56 @@ jobs:
       - name: Télécharger le mod depuis Discord (Si déclenché via API)
         if: ${{ github.event.inputs.file_url != '' }}
         run: |
+          mkdir -p mods
           curl -L "${{ github.event.inputs.file_url }}" -o "mods/${{ github.event.inputs.file_name }}"
 
       - name: Génération automatique du manifest.json
         run: |
           python -c "
           import os, json
-          mods = []
+
+          # 1. Charger l'existant pour ne rien perdre
+          manifest = {}
+          if os.path.exists('manifest.json'):
+              try:
+                  with open('manifest.json', 'r', encoding='utf-8') as f:
+                      manifest = json.load(f)
+              except:
+                  manifest = {}
+
+          # On récupère les mods déjà présents
+          existing_mods = manifest.get('mods', [])
+          
+          # On filtre pour GARDER les mods qui ne sont pas sur GitHub (ex: ton lien Dropbox)
+          # Si l'URL ne contient pas 'raw.githubusercontent', on le garde précieusement
+          external_mods = [m for m in existing_mods if 'raw.githubusercontent.com' not in m.get('url', '')]
+
+          # 2. Scanner le dossier /mods pour les fichiers GitHub
+          github_mods = []
           if os.path.exists('mods'):
               for f in os.listdir('mods'):
                   if f.endswith('.jar'):
-                      mods.append({
+                      github_mods.append({
                           'name': f.replace('.jar', ''),
                           'fileName': f,
                           'url': f'https://raw.githubusercontent.com/${{ github.repository }}/main/mods/{f}'
                       })
-          manifest = {
-              'version': '1.0.0', 
-              'gameVersion': '1.21.1', 
-              'loader': 'neoforge', 
-              'loaderVersion': '21.1.125', 
-              'mods': mods
-          }
-          with open('manifest.json', 'w') as f:
-              json.dump(manifest, f, indent=2)
+
+          # 3. Fusionner les deux listes
+          all_mods = external_mods + github_mods
+
+          # 4. Mettre à jour le manifest global
+          manifest.update({
+              'version': manifest.get('version', '1.0.0'),
+              'gameVersion': '1.21.1',
+              'loader': 'neoforge',
+              'loaderVersion': '21.1.219', # Version corrigée pour tes mods Create
+              'mods': all_mods
+          })
+
+          # 5. Sauvegarde propre
+          with open('manifest.json', 'w', encoding='utf-8') as f:
+              json.dump(manifest, f, indent=2, ensure_ascii=False)
           "
 
       - name: Commit et Push
@@ -56,4 +82,4 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add mods/ manifest.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and manifest" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and manifest (kept external links)" && git push)
