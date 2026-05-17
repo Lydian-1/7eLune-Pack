@@ -10,9 +10,29 @@
       "url": "https://www.dropbox.com/scl/fi/unb4qainycm983fth3vi6/create-aeronautics-bundled-1.21.1-1.1.3.jar?rlkey=i7bybomwf311r23v98knpxdev&st=7wdzz1dz&dl=1"
     },
     {
+      "name": "Enderscape",
+      "fileName": "enderscape-neoforge-1.0.9-mc1.21.1.jar",
+      "url": "https://www.dropbox.com/scl/fi/dzurx806bu9o9ju7h220t/enderscape-neoforge-1.0.9-mc1.21.1.jar?rlkey=area35pr58neahrz5ilkioibr&st=nqusxoqm&dl=1"
+    },
+    {
+      "name": "Create Unbreakable Netherite Knife 3 Neoforge-1.21.1",
+      "fileName": "Create Unbreakable Netherite Knife 3 Neoforge-1.21.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/Create%20Unbreakable%20Netherite%20Knife%203%20Neoforge-1.21.1.jar"
+    },
+    {
       "name": "CreateDragonsPlus-1.10.0b",
       "fileName": "CreateDragonsPlus-1.10.0b.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/CreateDragonsPlus-1.10.0b.jar"
+    },
+    {
+      "name": "Create_Colorful_Pipes_NeoForge-2.3.1+1.21.1",
+      "fileName": "Create_Colorful_Pipes_NeoForge-2.3.1+1.21.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/Create_Colorful_Pipes_NeoForge-2.3.1+1.21.1.jar"
+    },
+    {
+      "name": "Design-n-Decor-1.21.1-2.1.0",
+      "fileName": "Design-n-Decor-1.21.1-2.1.0.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/Design-n-Decor-1.21.1-2.1.0.jar"
     },
     {
       "name": "FarmersDelight-1.21.1-1.2.11a",
@@ -20,9 +40,79 @@
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/FarmersDelight-1.21.1-1.2.11a.jar"
     },
     {
+      "name": "bluemap-5.7-neoforge",
+      "fileName": "bluemap-5.7-neoforge.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/bluemap-5.7-neoforge.jar"
+    },
+    {
+      "name": "create-1.21.1-6.0.10",
+      "fileName": "create-1.21.1-6.0.10.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-1.21.1-6.0.10.jar"
+    },
+    {
       "name": "create-central-kitchen-2.3.0",
       "fileName": "create-central-kitchen-2.3.0.jar",
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-central-kitchen-2.3.0.jar"
+    },
+    {
+      "name": "create-enchantment-industry-2.3.1",
+      "fileName": "create-enchantment-industry-2.3.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-enchantment-industry-2.3.1.jar"
+    },
+    {
+      "name": "create-gunsmithing-1.21.1-1.4.6",
+      "fileName": "create-gunsmithing-1.21.1-1.4.6.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-gunsmithing-1.21.1-1.4.6.jar"
+    },
+    {
+      "name": "create_bluemap-1.1.1",
+      "fileName": "create_bluemap-1.1.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create_bluemap-1.1.1.jar"
+    },
+    {
+      "name": "create_hypertube-0.4.0-COMPAT-NEOFORGE",
+      "fileName": "create_hypertube-0.4.0-COMPAT-NEOFORGE.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create_hypertube-0.4.0-COMPAT-NEOFORGE.jar"
+    },
+    {
+      "name": "create_ratatouille-1.21.1-1.3.9-2",
+      "fileName": "create_ratatouille-1.21.1-1.3.9-2.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create_ratatouille-1.21.1-1.3.9-2.jar"
+    },
+    {
+      "name": "createrailwaysnavigator-neoforge-1.21.1-beta-0.9.0-C6",
+      "fileName": "createrailwaysnavigator-neoforge-1.21.1-beta-0.9.0-C6.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/createrailwaysnavigator-neoforge-1.21.1-beta-0.9.0-C6.jar"
+    },
+    {
+      "name": "emotecraft-for-MC1.21.1-2.4.12-neoforge",
+      "fileName": "emotecraft-for-MC1.21.1-2.4.12-neoforge.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/emotecraft-for-MC1.21.1-2.4.12-neoforge.jar"
+    },
+    {
+      "name": "etched-5.0.1",
+      "fileName": "etched-5.0.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/etched-5.0.1.jar"
+    },
+    {
+      "name": "itempeek-1.0.1",
+      "fileName": "itempeek-1.0.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/itempeek-1.0.1.jar"
+    },
+    {
+      "name": "jei-1.21.1-neoforge-19.27.0.340",
+      "fileName": "jei-1.21.1-neoforge-19.27.0.340.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/jei-1.21.1-neoforge-19.27.0.340.jar"
+    },
+    {
+      "name": "piggyback-neoforge-1.21.1-1.1.1",
+      "fileName": "piggyback-neoforge-1.21.1-1.1.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/piggyback-neoforge-1.21.1-1.1.1.jar"
+    },
+    {
+      "name": "player-drops-head-v.3.3.1",
+      "fileName": "player-drops-head-v.3.3.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/player-drops-head-v.3.3.1.jar"
     },
     {
       "name": "sable-neoforge-1.21.1-1.1.3",
@@ -30,9 +120,39 @@
       "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/sable-neoforge-1.21.1-1.1.3.jar"
     },
     {
-      "name": "create-1.21.1-6.0.10",
-      "fileName": "create-1.21.1-6.0.10.jar",
-      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/create-1.21.1-6.0.10.jar"
+      "name": "spark-1.10.124-neoforge",
+      "fileName": "spark-1.10.124-neoforge.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/spark-1.10.124-neoforge.jar"
+    },
+    {
+      "name": "storagedelight-26.04.18a+1.21-neoforge",
+      "fileName": "storagedelight-26.04.18a+1.21-neoforge.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/storagedelight-26.04.18a+1.21-neoforge.jar"
+    },
+    {
+      "name": "supplementaries-neoforge-1.21.1-3.6.4",
+      "fileName": "supplementaries-neoforge-1.21.1-3.6.4.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/supplementaries-neoforge-1.21.1-3.6.4.jar"
+    },
+    {
+      "name": "tfmg-1.2.0",
+      "fileName": "tfmg-1.2.0.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/tfmg-1.2.0.jar"
+    },
+    {
+      "name": "voicechat-neoforge-1.21.1-2.6.17",
+      "fileName": "voicechat-neoforge-1.21.1-2.6.17.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/voicechat-neoforge-1.21.1-2.6.17.jar"
+    },
+    {
+      "name": "voicemessages-neoforge-1.0.12-1.21.1",
+      "fileName": "voicemessages-neoforge-1.0.12-1.21.1.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/voicemessages-neoforge-1.0.12-1.21.1.jar"
+    },
+    {
+      "name": "watut-neoforge-1.21.0-1.2.7",
+      "fileName": "watut-neoforge-1.21.0-1.2.7.jar",
+      "url": "https://raw.githubusercontent.com/Lydian-1/7eLune-Pack/main/mods/watut-neoforge-1.21.0-1.2.7.jar"
     }
   ]
 }
