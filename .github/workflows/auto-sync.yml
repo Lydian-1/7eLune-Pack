@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'mods/**'
-      - 'config/**' # Se déclenche aussi si tu modifies les configs
+      - 'config/**'
   workflow_dispatch:
     inputs:
       file_url:
@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout du code
         uses: actions/checkout@v4
@@ -30,9 +31,13 @@ jobs:
           curl -L "${{ github.event.inputs.file_url }}" -o "mods/${{ github.event.inputs.file_name }}"
 
       - name: Génération automatique du manifest.json
+        env:
+          REPO: ${{ github.repository }}
         run: |
           python -c "
           import os, json
+
+          repo = os.environ['REPO']
 
           # 1. Charger l'existant
           manifest = {}
@@ -45,9 +50,9 @@ jobs:
 
           # --- GESTION DES MODS ---
           existing_mods = manifest.get('mods', [])
-          # On garde les liens externes (Dropbox)
+          # On garde les liens externes (Dropbox, etc.)
           external_mods = [m for m in existing_mods if 'raw.githubusercontent.com' not in m.get('url', '')]
-          
+
           # On scanne les fichiers locaux dans /mods
           github_mods = []
           if os.path.exists('mods'):
@@ -56,12 +61,11 @@ jobs:
                       github_mods.append({
                           'name': f.replace('.jar', ''),
                           'fileName': f,
-                          'url': f'https://raw.githubusercontent.com/${{ github.repository }}/main/mods/{f}'
+                          'url': f'https://raw.githubusercontent.com/{repo}/main/mods/{f}'
                       })
           all_mods = external_mods + github_mods
 
           # --- GESTION DES CONFIGS (Protection) ---
-          # On garde la section configs telle quelle si elle existe
           configs = manifest.get('configs', [])
 
           # 4. Mettre à jour le manifest final
@@ -83,5 +87,11 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add mods/ config/ manifest.json
+          
+          # Sécurité : On n'ajoute que les dossiers s'ils existent physiquement
+          git add manifest.json
+          if [ -d "mods" ]; then git add mods/; fi
+          if [ -d "config" ]; then git add config/; fi
+          
+          # Commit et push seulement s'il y a des changements détectés
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and protect configs" && git push)
