@@ -50,7 +50,8 @@ jobs:
 
           # --- GESTION DES MODS ---
           existing_mods = manifest.get('mods', [])
-          # On garde les liens externes (Dropbox, etc.)
+          
+          # On garde les liens externes
           external_mods = [m for m in existing_mods if 'raw.githubusercontent.com' not in m.get('url', '')]
 
           # On scanne les fichiers locaux dans /mods
@@ -65,7 +66,7 @@ jobs:
                       })
           all_mods = external_mods + github_mods
 
-          # --- GESTION DES CONFIGS (Protection) ---
+          # --- GESTION DES CONFIGS ---
           configs = manifest.get('configs', [])
 
           # 4. Mettre à jour le manifest final
@@ -88,10 +89,9 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Sécurité : On n'ajoute que les dossiers s'ils existent physiquement
+          # Ajout intelligent : Git n'ajoute les dossiers que s'ils existent vraiment
           git add manifest.json
           if [ -d "mods" ]; then git add mods/; fi
           if [ -d "config" ]; then git add config/; fi
           
-          # Commit et push seulement s'il y a des changements détectés
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Sync mods and protect configs" && git push)
